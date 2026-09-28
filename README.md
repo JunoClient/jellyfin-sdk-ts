@@ -2,6 +2,12 @@
 
 A lightweight, promise-based TypeScript client for the Jellyfin API.
 
+## Compatibility
+
+This SDK targets the Jellyfin 12.1 API.
+
+Its API data models are provided by the official [`@jellyfin/sdk`](https://www.npmjs.com/package/@jellyfin/sdk) package, rather than being independently maintained in this project.
+
 ## Install
 
 ```sh
