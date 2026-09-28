@@ -6,7 +6,7 @@ A lightweight, promise-based TypeScript client for the Jellyfin API.
 
 This SDK targets the Jellyfin 12.1 API.
 
-Its API data models are provided by the official [`@jellyfin/sdk`](https://www.npmjs.com/package/@jellyfin/sdk) package, rather than being independently maintained in this project.
+Full compliance has not yet been achieved. Work is ongoing to reach Jellyfin 12.1 compatibility, and the SDK API may change substantially during this development phase. Currently, data models are provided by the official [`@jellyfin/sdk`](https://www.npmjs.com/package/@jellyfin/sdk) package, rather than being independently maintained in this project.
 
 ## Install
 
@@ -35,3 +35,8 @@ const client = new JellyfinClient(
 const systemInfo = await client.System.getPublicSystemInfo();
 const authentication = await client.authenticateUserByName("user", "password");
 ```
+
+## Disclaimer
+
+Use this SDK at your own risk. It is provided as-is, without warranty; see the
+[ISC License](./LICENSE) for the full terms.
