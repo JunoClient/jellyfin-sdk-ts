@@ -18,10 +18,15 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./models": {
+      "types": "./dist/models/index.d.ts",
+      "import": "./dist/models/index.js"
     }
   },
   "files": [
     "dist",
+    "src",
     "LICENSE",
     "README.md"
   ],
