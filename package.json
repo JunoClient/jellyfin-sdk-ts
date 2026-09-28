@@ -1,6 +1,6 @@
 {
   "name": "@junoclient/jellyfin-sdk-ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A TypeScript SDK for Jellyfin used in Juno",
   "homepage": "https://github.com/JunoClient/jellyfin-sdk-ts#readme",
   "bugs": {
