@@ -1,4 +1,5 @@
 import type { ApiConfiguration } from "./models/Shared";
+import { JellyfinApiError } from "./JellyfinApiError";
 
 const paramsFromObject = (object: object) => {
   const params = new URLSearchParams();
@@ -182,7 +183,7 @@ export class RequestBuilder<T> {
    * - Parses response as JSON.
    *
    * @returns {Promise<T>} The parsed JSON response.
-   * @throws {Error} If the server returns a non-2xx status code.
+   * @throws {JellyfinApiError} If the server returns a non-2xx status code.
    */
   public async build(): Promise<T> {
     const url = this.url();
@@ -214,9 +215,8 @@ export class RequestBuilder<T> {
 
     // Handle HTTP errors
     if (!res.ok) {
-      // Attempt to get error details from body, fallback to statusText
       const errorBody = await res.text().catch(() => "");
-      throw new Error(errorBody || `Request failed with status: ${res.status}`);
+      throw new JellyfinApiError(res.status, res.statusText, errorBody);
     }
 
     // Handle 204 No Content or 205 Reset Content
