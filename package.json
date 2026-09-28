@@ -1,0 +1,50 @@
+{
+  "name": "@junoclient/jellyfin-sdk-ts",
+  "version": "0.1.0",
+  "description": "A TypeScript SDK for Jellyfin used in Juno",
+  "homepage": "https://github.com/JunoClient/jellyfin-sdk-ts#readme",
+  "bugs": {
+    "url": "https://github.com/JunoClient/jellyfin-sdk-ts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JunoClient/jellyfin-sdk-ts.git"
+  },
+  "license": "ISC",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run typecheck",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@jellyfin/sdk": "^1.0.0",
+    "base64-js": "^1.5.1"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@11.18.0"
+}
