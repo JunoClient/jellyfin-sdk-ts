@@ -1,6 +1,7 @@
 import { AuthApi } from "./api/AuthApi";
 import { BrandingApi } from "./api/BrandingApi";
 import { DevicesApi } from "./api/DevicesApi";
+import { EnvironmentApi } from "./api/EnvironmentApi";
 import { ImageApi } from "./api/ImageApi";
 import { ItemsApi } from "./api/ItemsApi";
 import { LibraryApi } from "./api/LibraryApi";
@@ -57,6 +58,10 @@ export class JellyfinClient {
 
   get Devices() {
     return new DevicesApi(this.configuration);
+  }
+
+  get Environment() {
+    return new EnvironmentApi(this.configuration);
   }
 
   get Image() {
