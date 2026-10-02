@@ -1,4 +1,5 @@
 import { AuthApi } from "./api/AuthApi";
+import { BackupApi } from "./api/BackupApi";
 import { BrandingApi } from "./api/BrandingApi";
 import { DevicesApi } from "./api/DevicesApi";
 import { EnvironmentApi } from "./api/EnvironmentApi";
@@ -50,6 +51,10 @@ export class JellyfinClient {
 
   get Auth() {
     return new AuthApi(this.configuration);
+  }
+
+  get Backup() {
+    return new BackupApi(this.configuration);
   }
 
   get Branding() {
